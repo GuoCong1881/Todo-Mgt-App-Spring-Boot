@@ -31,4 +31,13 @@ public class SayHelloController {
 		sb.append("</html>");
 		return sb.toString();
 	}
+	
+	//JSP - Java Server Pages (View technology)
+	// URL: "say-hello-jsp" -> sayHello.jsp
+	// jsp should be created in the specific folder:
+	// /src/main/resources/META-INF/resources/WEB-INF/jsp/sayHello.jsp
+	@RequestMapping("say-hello-jsp")
+	public String sayHelloJsp() {
+		return "sayHello";
+	}
 }
