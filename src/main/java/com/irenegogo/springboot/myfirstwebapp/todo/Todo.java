@@ -2,6 +2,9 @@ package com.irenegogo.springboot.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
 //need to store the data in a database (MySQL)
@@ -9,15 +12,26 @@ import jakarta.validation.constraints.Size;
 //Step 1: Static List of todos -> Step 2: Database (H2, MySQL)
 
 
+// mean the bean is mapped to a database table
+// spring auto-configuration: if it sees any entity, it automatically start creating
+// tables in h2
+@Entity
 public class Todo {
-	
+	@Id
+	@GeneratedValue
 	private int id;
+
 	private String username;
 	
 	@Size(min=10, message="Enter at least 10 characters")
 	private String description;
 	private LocalDate targetDate;
 	private boolean done;
+	
+	public Todo() {
+		
+	}
+	
 	
 	public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
 		super();

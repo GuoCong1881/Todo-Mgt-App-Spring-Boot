@@ -1,5 +1,6 @@
 <%@ include file="common/header.jspf"%>
 		<%@ include file="common/navigation.jspf"%>
+		
 		<div class="container">
 			<h2>Enter Todo Details</h2>
 			<form:form method="post" modelAttribute="todo">
@@ -18,10 +19,12 @@
 				<input type="submit" class="btn btn-success"/>
 			</form:form>
 		</div>
+		
+
+<%@ include file="common/footer.jspf"%>
 		<script type="text/javascript">
 			$('#targetDate').datepicker({
 		    	format: 'yyyy-mm-dd',
 			});
 		</script>
-<%@ include file="common/footer.jspf"%>
 		
